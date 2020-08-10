@@ -1,18 +1,25 @@
-let appId = 'abc';
-const button = document.querySelector('button')!;
+interface Greetable {
+  name: string;
 
-function add(n1: number, n2: number) {
-  if (n1 + n2 > 0) {
-    return n1 + n2;
+  greet(phrase: string): void;
+}
+
+class Person implements Greetable {
+  name: string;
+  age = 30;
+
+  constructor(n: string) {
+    this.name = n;
   }
-  return;
+
+  greet(phrase: string) {
+    console.log(phrase + ' ' + this.name);
+  }
 }
 
-function clickHandler(message: string) {
-  // let userName = 'Max';
-  console.log('Clicked! ' + message);
-}
-// a comment
-if (button) {
-  button.addEventListener('click', clickHandler.bind(null, "You're welcome!"));
-}
+let user1: Greetable;
+
+user1 = new Person('Max');
+
+user1.greet('Hi there - I am');
+console.log(user1);
