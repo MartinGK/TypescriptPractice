@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "course-starting-project/",
+			"problemMatcher": [],
+			"label": "npm: install - course-starting-project",
+			"detail": "install dependencies from package"
+		}
+	]
+}
